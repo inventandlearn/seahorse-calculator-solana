@@ -18,13 +18,12 @@ describe("Solana Calculator Program:", () => {
   )[0]
 
   it("Is initialized!", async () => {
-    // Add your test here.
-
     const tx = await program.methods.initCalculator().rpc();
     console.log("Your transaction signature", tx);
   })
 
 
+  // Add your tests here.
   it('Does some operations', async () => {
     const add2 = await program.methods
       .doOperation({ add : true  }, new BN(5))
@@ -48,9 +47,8 @@ describe("Solana Calculator Program:", () => {
     await provider.sendAndConfirm(tx)
   })
 
+
   // Make sure our calculator is secure
-
-
   it('Prevents fraudulent transactions', async () => {
     let hackerman = new web3.Keypair()
 
